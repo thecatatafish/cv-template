@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <script type="text/javascript" src="./data.js"></script>
+
+  <head>
+    <meta charset="utf-8" />
+    <title>CV</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="http://fonts.googleapis.com/css?family=Lato:300,400,500,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.2.1/dist/cdn.min.js"
+    ></script>
+    <script>
+      document.addEventListener("alpine:init", () => {
+        Alpine.directive("expression", (el, options, methods) => {
+          const { evaluateLater, effect } = methods;
+          let expression = evaluateLater(`\`${el.innerText}\``);
+          effect(() => {
+            expression((value) => {
+              el.innerText = value;
+            });
+          });
+        });
+      });
+    </script>
+  </head>
+
+  <body class="" x-data="{...data}">
+    <div class="row banner">
+      <div class="col-3">
+        <span class="helper"></span>
+        <img
+          :src="header.profile_img_src"
+          alt="portrait"
+          class="profile-image"
+        />
+      </div>
+
+      <div class="col-9">
+        <p>
+          <span class="first-name" x-text="header.first_name"></span> &nbsp;
+          <span class="last-name" x-text="header.last_name"></span> <br />
+          <span class="function-title" x-text="header.job_title"></span>
+        </p>
+        <p class="description" x-text="header.description"></p>
+      </div>
+    </div>
+    <hr class="split-line" />
+
+    <div class="row main">
+      <div class="col-8">
+        <p class="experience">experience</p>
+        <template x-for="experience in experiences">
+          <div class="experience-details">
+            <p class="job-title" x-text="experience.title"></p>
+            <p class="company-location-duration">
+              <span x-expression
+                >${experience.company} | ${experience.location} |
+                ${experience.start}-${experience.end}</span
+              >
+            </p>
+            <div class="job-description" x-html="experience.description"></div>
+          </div>
+        </template>
+      </div>
+      <div class="col-4 side-pane">
+        <p class="side-pane-heading">Contact</p>
+
+        <div class="side-pane-details">
+          <p>
+            <span
+              class="iconify"
+              data-icon="mdi:home"
+              data-inline="true"
+            ></span>
+            <span x-text="contact.city"></span>
+          </p>
+          <p>
+            <span
+              class="iconify"
+              data-icon="mdi:cellphone-android"
+              data-inline="true"
+            ></span>
+            <span x-text="contact.phone"></span>
+          </p>
+          <p>
+            <span
+              class="iconify"
+              data-icon="mdi:email-outline"
+              data-inline="true"
+            ></span>
+            <a
+              x-bind:href="`mailto:${contact.email}`"
+              x-text="contact.email"
+            ></a>
+          </p>
+          <p>
+            <span
+              class="iconify"
+              data-icon="mdi:linkedin"
+              data-inline="true"
+            ></span>
+            <a
+              x-bind:href="contact.linkedin.url"
+              target="_blank"
+              x-text="contact.linkedin.shorthand"
+            ></a>
+          </p>
+          <p>
+            <span
+              class="iconify"
+              data-icon="mdi:github"
+              data-inline="true"
+            ></span>
+            <a
+              x-bind:href="contact.github.url"
+              target="_blank"
+              x-text="contact.github.shorthand"
+            ></a>
+          </p>
+        </div>
+        <p class="side-pane-heading">Education</p>
+        <template x-for="e in education">
+          <div class="side-pane-details">
+            <p class="degree" x-text="e.degree"></p>
+            <p x-text="e.school"></p>
+            <p x-expression>${e.start_year}-${e.end_year}</p>
+          </div>
+        </template>
+        <p class="side-pane-heading">Technical Skills</p>
+        <div class="side-pane-details">
+          <template x-for="skill in tech_skills">
+            <div>
+              <span
+                class="iconify"
+                x-bind:data-icon="skill.icon"
+                data-inline="true"
+              ></span>
+              <span x-text="skill.tool"></span>
+            </div>
+          </template>
+          <template x-for="skill in tech_skills_img_logo">
+            <p>
+              <img :src="skill.img_src" alt="" class="custom-logo" />
+              <span x-text="skill.tool"></span>
+            </p>
+          </template>
+        </div>
+        <p class="side-pane-heading">Interests</p>
+        <div class="side-pane-details">
+          <template x-for="interest in interests">
+            <p>
+              <span
+                class="iconify"
+                :data-icon="interest.icon"
+                data-inline="true"
+              ></span>
+              <span x-text="interest.title"></span>
+            </p>
+          </template>
+        </div>
+        <p class="side-pane-heading">Languages</p>
+        <div class="side-pane-details">
+          <template x-for="skill in language_skills">
+            <p>
+              <span
+                class="iconify"
+                :data-icon="skill.icon"
+                data-inline="true"
+              ></span>
+              <span x-text="skill.language"></span>
+              <span class="language-level" x-expression>(${skill.level})</span>
+            </p>
+          </template>
+        </div>
+      </div>
+    </div>
+  </body>
+  <footer>
+    <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+  </footer>
+</html>
