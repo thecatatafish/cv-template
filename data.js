@@ -10,10 +10,10 @@ const data = {
 
   contact: {
     city: "London, UK",
-    phone: "+44 999 1232 123",
+    phone: "+44 7911 123456",
     email: "john@doe.com",
-    linkedin: { url: "https://linkedin.com/johndoe", shorthand: "johndoe" },
-    github: { url: "https://github.com/johndoe", shorthand: "johndoe" },
+    linkedin: { url: "https://linkedin.com/john_doe", shorthand: "john_doe" },
+    github: { url: "https://github.com/john_doe", shorthand: "john_doe" },
   },
 
   experiences: [
@@ -29,8 +29,7 @@ const data = {
       placerat eleifend arcu. Proin tristique ligula felis, et laoreet neque euismod sed. \
       <ul> <li> First bullet </li> <li> Second bullet</li></ul> \
       Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. \
-      Sed accumsan sodales dignissim. Nullam suscipit ornare lacus, at congue lacus mollis id. \
-      Aliquam venenatis pellentesque arcu et volutpat.",
+      Sed accumsan sodales dignissim.",
     },
     {
       company: "Apple Inc.",
@@ -44,11 +43,10 @@ const data = {
       placerat eleifend arcu. Proin tristique ligula felis, et laoreet neque euismod sed. \
       <ul> <li> First bullet </li> <li> Second bullet</li></ul> \
       Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. \
-      Sed accumsan sodales dignissim. Nullam suscipit ornare lacus, at congue lacus mollis id. \
-      Aliquam venenatis pellentesque arcu et volutpat.",
+      Sed accumsan sodales dignissim.",
     },
     {
-        company: "Microsoft.",
+        company: "Microsoft",
         title: "Developer - Internship",
         location: "Redmond, WA",
         start: "2017",
@@ -59,8 +57,7 @@ const data = {
         placerat eleifend arcu. Proin tristique ligula felis, et laoreet neque euismod sed. \
         <ul> <li> First bullet </li> <li> Second bullet</li></ul> \
         Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. \
-        Sed accumsan sodales dignissim. Nullam suscipit ornare lacus, at congue lacus mollis id. \
-        Aliquam venenatis pellentesque arcu et volutpat.",
+        Sed accumsan sodales dignissim.",
       },
   ],
 
@@ -109,6 +106,6 @@ const data = {
   interests: [
     { title: "Weightlifting", icon: "maki:fitness-centre-11" },
     { title: "Cycling", icon: "cil:bike" },
-    { title: "Football", icon: "emojione-monotone:soccer-ball" },
+    { title: "Lego", icon: "tabler:lego" },
   ],
 };
