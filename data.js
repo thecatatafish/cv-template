@@ -42,8 +42,7 @@ const data = {
       Nunc eu porta metus, et finibus sapien. Mauris non urna eros. Morbi odio metus, consectetur sed massa vitae, \
       placerat eleifend arcu. Proin tristique ligula felis, et laoreet neque euismod sed. \
       <ul> <li> First bullet </li> <li> Second bullet</li></ul> \
-      Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. \
-      Sed accumsan sodales dignissim.",
+      Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
     },
     {
         company: "Microsoft",
@@ -55,7 +54,6 @@ const data = {
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur varius ligula ultrices rutrum elementum. \
         Nunc eu porta metus, et finibus sapien. Mauris non urna eros. Morbi odio metus, consectetur sed massa vitae, \
         placerat eleifend arcu. Proin tristique ligula felis, et laoreet neque euismod sed. \
-        <ul> <li> First bullet </li> <li> Second bullet</li></ul> \
         Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. \
         Sed accumsan sodales dignissim.",
       },
